@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profiles.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .profile-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #000;
+        }
+        
+        h1 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+        
+        p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .bio {
+            font-style: italic;
+        }
+        
+        .edit-btn {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .tag {
+            background: #ddd;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 5px;
+            font-size: 12px;
+        }
+        
+        .languages ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .languages li {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="{{ user['profile_pic'] }}" alt="Profile Picture" class="profile-pic">
+        <h1>{{ user['name'] }}</h1>
+        <p>{{ user['college'] }}</p>
+        <p class="bio">{{ user['bio'] }}</p>
+    </div>
+
+    <button class="edit-btn">Edit Profile</button>
+
+    <div class="skills">
+        <h2>Skills</h2>
+        <div class="tags">
+            {% for skill in user['skills'] %}
+                <span class="tag">{{ skill }}</span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="languages">
+        <h2>Familiar Languages</h2>
+        <ul>
+            {% for lang, level in user['languages'].items() %}
+                <li>{{ lang }} <span class="level">{{ '🟢' * level }}</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

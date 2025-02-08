@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skilswapp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #a3d5a3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .chat-container {
+        width: 350px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    .header {
+        background: #003366;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+    }
+    
+    .chat-box {
+        height: 400px;
+        overflow-y: auto;
+        padding: 10px;
+        background: #e6ffe6;
+    }
+    
+    .chat-input {
+        display: flex;
+        padding: 10px;
+        background: white;
+        border-top: 1px solid #ddd;
+    }
+    
+    .chat-input input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .chat-input button {
+        background: #f0c14b;
+        border: none;
+        padding: 8px 15px;
+        cursor: pointer;
+        margin-left: 5px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <h2>skillswapp</h2>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="message" placeholder="Type your message here">
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        function sendMessage() {
+            let message = document.getElementById("message").value;
+            if (message.trim() !== "") {
+                socket.emit("send_message", { message: message });
+                document.getElementById("message").value = "";
+            }
+        }
+
+        socket.on("receive_message", function(data) {
+            let chatBox = document.getElementById("chat-box");
+            let messageElement = document.createElement("p");
+            messageElement.textContent = data.message;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+    </script>
+</body>
+</html>
