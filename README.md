@@ -1,34 +1,35 @@
-# [Project Name] 🎯
+# skillswapp🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+About Us Welcome to skillswapp, a platform designed to connect individuals through skill trading. Our mission is to create a community where people can exchange knowledge, learn new skills, and grow together without financial barriers. Whether you want to learn a new language, improve your coding skills, or master an instrument, our platform helps you find mentors and trade expertise in a seamless and collaborative way. What We Offer Skill-Based Matching: Connect with people who have the skills you need and offer your expertise in return. Seamless Communication: Chat with potential mentors before confirming a trade. Progress Tracking: Share updates, get feedback, and improve continuously. Community-Driven Learning: Grow your network and build valuable relationships. Join us in redefining learning through collaboratio
+### Team Name: [trinitycoders]
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [Anvi keertana R] - [geck]
+- Member 2: [Nivedita suresh] - [geck]
+- Member 3: [Sreya shanker kp] - [geck]
 
-### Hosted Project Link
-[mention your project hosted project link here]
+### Hosted Project Link[
+[https://anvikeertanar.github.io/skillswapp/]
 
 ### Project Description
-[2-3 lines about what your project does]
+[People often face difficulty in learning new skills which are unknown to them.A person might be skillful in one skill, but may lack another skill which they might need or wish to have.Our website provides a solution for this by helping people learn a skill from another person along wth exchanging once own skill with others,thereby making skill training affordable. ]
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+[People often face difficulty in learning new skills which are unknown to them.A person might be skillful in one skill, but may lack another skill which they might need or wish to have.]
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+[Our website provides a solution for this by helping people learn a skill from another person along wth exchanging once own skill with others,thereby making skill training affordable. ]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [html,css,python]
+- [flask]
+- [flask login]
+- [vs code,html,javascript,bootstrap]
 
 For Hardware:
 - [List main components]
